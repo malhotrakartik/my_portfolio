@@ -71,7 +71,7 @@ const Projects = () => {
                     <div style = {projectHeading}>
                          {
                            headings.map((heading,index)=>(
-                               <span onClick = {headingClickHandler} style = {projectHead} id = {index}>{heading}</span>
+                               <span key={index} onClick = {headingClickHandler} style = {projectHead} id = {index}>{heading}</span>
                            ))
                          }
                     </div>

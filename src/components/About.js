@@ -4,7 +4,8 @@ import ProgressBar from './ProgressBar'
 import profileImage from '../image/profile_pic.jpg'
 
 const About = () => {
- 
+
+   const [userData , changeUserData] = useState({});
    
     const outerDiv = {
         height : "100vh",
@@ -68,6 +69,20 @@ const About = () => {
         { bgcolor: "#ef6c00", completed: 53 },
       ];
 
+      useEffect(() => {
+        fetch('http://localhost:4000/userDetails')
+        .then(response => response.json())
+        .then(data => {
+            changeUserData(data);
+        });
+      }, [])
+
+
+      useEffect(()=>{
+        console.log(userData);
+      },[userData])
+      
+
 
 
     return (
@@ -76,9 +91,9 @@ const About = () => {
         paddingBottom  : "2px"}}>ABOUT</span></div>
                 <div style = {skillsHolder}>
                 <div style = {skillAbout}>
-                    <div style = {aboutPhoto}><img src = {profileImage} height = "150" width = "150"/></div>
+                    <div style = {aboutPhoto}><img src = {userData.myDetails.proImage} height = "150" width = "150"/></div>
                     <div>Who's This Guy</div>
-                    <div>Description</div>
+                    <div>{userData.myDetails.desc}</div>
                 </div>
                 <div style = {skillBar} >
                  

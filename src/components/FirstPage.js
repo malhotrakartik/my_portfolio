@@ -1,5 +1,6 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Button from '@material-ui/core/Button';
+
 
 
 const FirstPage = () => {
@@ -34,6 +35,8 @@ const FirstPage = () => {
           fontSize : "2.5rem"
           ,color : "#fff"
       }
+      
+    
 
 
     return (

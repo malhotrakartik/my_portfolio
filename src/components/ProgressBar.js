@@ -16,7 +16,6 @@ const ProgressBar = (props) => {
 
 
     var myElement = document.getElementById('my-element');
-    console.log(myElement);
     // var bounding = myElement.getBoundingClientRect()
 
 // if (bounding.top >= 0 && bounding.left >= 0 && bounding.right <= window.innerWidth && bounding.bottom <= window.innerHeight) {
